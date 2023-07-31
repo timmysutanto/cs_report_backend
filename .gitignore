@@ -1,0 +1,12 @@
+!/vendor/
+/vendor/*
+!/vendor/laravel/
+/vendor/laravel/*
+!/vendor/laravel/lumen-framework
+
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+.phpunit.result.cache
+/database/database.sqlite

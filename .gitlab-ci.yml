@@ -1,0 +1,16 @@
+before_script:
+  - echo "Before script"
+  - cd /var/www/html/cs_port_backend #your project path
+building:
+  stage: build
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "dev"'
+  script:
+    - git config --global --add safe.directory /var/www/html/cs_port_backend
+    - git reset --hard
+    - git checkout dev
+    - git pull 
+    - composer install
+    - cd /var/www/html
+    - sudo chmod 775 -R cs_port_backend/
+    - sudo chown -R www-data:www-data cs_port_backend/
